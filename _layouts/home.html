@@ -21,7 +21,7 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
-          {{ post.content | truncatewords:60 }}   
+          {{ post.content | markdownify | strip_html |  truncatewords:60 }}   
         <h4>   
           {% if post.tags.size > 0 %}
           Tag{% if post.tags.size > 1 %}s{% endif %}:
